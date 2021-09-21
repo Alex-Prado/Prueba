@@ -10,7 +10,6 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    /* position: relative; */
 }
 
 /* body {
@@ -48,10 +47,10 @@
 }
 
 @media screen and (max-width:795px) {
-    .fondo {
-        flex-direction: column;
-        justify-content: center;
-    }
+    /* .fondo { */
+        /* flex-direction: column; */
+        /* justify-content: center; */
+    /* } */
     .fondo img {
         /* max-width: 40%; */
         display: none;
@@ -61,7 +60,6 @@
         transform: translateX(0);
         text-align: center;
         padding: 0 1rem;
-        /* font-size: 17px; */
         position: inherit;
     }
 }
@@ -72,7 +70,11 @@
     width: 40px;
     height: 40px;
     position: absolute;
-    bottom: 20px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    /* bottom: 20px; */
     /* left: 50%; */
     /* background-color: white; */
     transform: translateX(0%) translateY(-80px) rotate(45deg);
@@ -433,17 +435,31 @@ img {
 } */
 
 /* -------------------------BOTONES FLOTANTES------------------------------------------- */
-
-#btn-mas {
-    display: none;
-}
-
 .container {
     position: fixed;
     bottom: 20px;
     right: 20px;
-    z-index: 10;
+    z-index: 1;
 }
+#btn-mas {
+    display: none;
+}
+#btn-mas:checked~.redes a {
+    margin-bottom: 10px;
+    opacity: 1;
+    /* display: block; */
+    visibility: visible;
+}
+.redes a {
+    margin-bottom: -15px;
+    opacity: 0;
+    visibility: hidden;
+    font-size: 18px;
+}
+#btn-mas:checked~.btn-mas .icon-mas2 {
+    transform: rotate(137deg);
+}
+
 
 .redes a, .icon-mas2 {
     display: block;
@@ -459,26 +475,15 @@ img {
     transition: all 500ms ease;
 }
 
-.redes a {
-    margin-bottom: -15px;
-    opacity: 0;
-    visibility: hidden;
-    font-size: 18px;
-}
 
-#btn-mas:checked~.redes a {
-    margin-bottom: 10px;
-    opacity: 1;
-    visibility: visible;
-}
+
+
 
 .icon-mas2 {
     cursor: pointer;
 }
 
-#btn-mas:checked~.btn-mas .icon-mas2 {
-    transform: rotate(137deg);
-}
+
 
 .facebook {
     background-color: #3b5998!important;
